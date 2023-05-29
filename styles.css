@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 11px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: translateZ(-10px) scale(2);
+    user-select: none;
+}
+
+.banner_logo  {
+    display:inline-flexbox;
+    border-radius: 3px;
+    width: 50vh;
+    height: 50vh;
+    background-color: black;
+    opacity: 0.85;
+    padding: 6vh;
+    z-index: 1;
+    transform: translateZ(-5px);
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.65));
+}
+
+.title {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 200;
+    font-size: 10vh;
+    color: white;
+    user-select: none;
+}
+
+.banner_logo hr {
+    outline: 0.1vh solid greenyellow;
+    margin-top: 1vh;
+    color: greenyellow;
+}
+
+.banner_logo p {
+    font-family: "Metal";
+    font-size: 6vh;
+    color: white;
+    user-select: none;
+}
+
+.arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 900%) translateZ(-8px) scale(1.8);
+}
+
+.arrow span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(1) {
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(2) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+nav {
+    font-family: "Plus Jakarta Sans";
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.logo {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 200;
+    font-size: 38px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    margin-right: auto;
+    user-select: none;
+}
+
+nav ul {
+    user-select: none;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+nav li a {
+    transition: all 0.3s ease 0s;
+    color: black;
+    text-decoration: none;
+    user-select: none;
+}
+
+nav li a:hover{
+    color: gray;
+}
+
+.contact_btn {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 500;
+    padding: 9px 25px;
+    margin-left: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: 1px solid rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.contact_btn:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+main {
+    font-size: 16px;
+    padding: 8rem;
+    background-color: white;
+}
+
+main p {
+    font-family: "Metal";
+    padding: 50px 10%;
+}

@@ -399,6 +399,39 @@ form .submit:hover {
     cursor: pointer;
 }
 
+.avatar {
+    padding: 10px;
+    width: 50%;
+    height: 50vw;
+    object-fit: cover;
+    display: inline-block;
+    min-width: 500px;
+    vertical-align: middle;
+}
+
+.about_section h1 {
+    padding: 20px 10%;
+
+}
+
+.about_section p {
+    font-size: 18px;
+}
+
+.about_text {
+    width: 50%;
+    min-width: 600px;
+    display: inline-block;
+}
+
+@media (max-width: 1200px) {
+    .avatar,
+    .about_text {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
 @media (max-width: 1100px) {
     form .submit,
     form textarea,

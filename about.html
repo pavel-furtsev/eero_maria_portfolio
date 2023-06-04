@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html leng="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maria Eero Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav>
+    <a class="logo" href="#banner">MARIA EERO</a>
+    <ul class="menu">
+        <li> <a href="index.html#projects">Projects</a> </li>
+        <li> <a href="index.html#artwork">Artworka</a> </li>
+        <li> <a href="index.html#designs">Designs</a> </li>
+        <li> <a href="#">About</a> </li>
+    </ul>
+    <button class="contact_btn" onclick="window.location.href='#contact';">Contact</button>
+</nav>
+
+<main class="about_section">
+    <img class="avatar" src="sources/avatar.jpeg"
+        alt="Photo of Maria Eero">
+    <div class="about_text">
+        <h1 style="font-family: 'Plus Jakarta Sans'; font-weight: 100; font-size: 24px; text-transform: uppercase;">About me</h1>
+        <p>Hello there!<br>My name is Maria Eero, I'm a young upcoming architect-designer and a creative seeker from Estonia.  In 2016 I received my bachelor degree in architecture at Nizhny Novgorod State University (Russia). Being a student I got that architecture is a connecting link in the regulation and governing the quality of life. I believe that architecture can make a difference and I aspire to be a part of that change. 
+
+        In September I was accepted for an Erasmus EVS project in Austria. I choose work with disables people, I wanted to see and understand with my own eyes their position in society and how with an architectural design we can make their life easier and comfortable. I have a dream to work with an architecture team on creating urban spaces in cities which would support the needs of disables people, a place of safety, that would free and inspire them.
+
+        I hope to develop in the sphere of ecological architecture and green technologies that needed to design environmentally friendly and sustainable buildings.
+
+        From the fact that in life I moved a lot to different countries, I learned to easily adapt and find contact with new people. I want to work, where I have not been yet, in a different country with different culture.
+
+        I am passionate, self-driven, hardworking and willing to go above and beyond to design spaces or objects that best fit our lifestyle.</p>
+    </div>
+    
+</main>
+
+<footer id="contact">
+    <div class="contact_links">
+        <h2>Get in touch</h2>
+        <div class="buttons">
+            <button class="insta"></button>
+            <button class="linkedin"></button>
+            <button class="behance"></button>
+        </div>
+    </div>
+    <form action="https://formsubmit.co/eeromaria.arch@gmail.com" method="POST" target="_blank">
+        <div class="form_inputs">
+            <input name="name" type="text" placeholder="Name *" required aria-required="true" aria-label="Name *">
+            <input name="email" type="email" placeholder="Email *" required aria-required="true" pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250" aria-label="Email *" value="" aria-invalid="false">
+            <input name="subject" type="text" placeholder="Subject" aria-required="false" aria-label="Subject" value="" aria-invalid="true">
+        </div>
+        <textarea name="message" placeholder="Message *" required aria-required="true" spellcheck="true" aria-invalid="true"></textarea>
+        <button class="submit">Send</button>
+    </form>
+    <p>© 2011 Maria Eero | site by <a href="https://github.com/pavel-furtsev" target="_blank" style="text-decoration: none; font-family: 'Metal'; color: black">@pavel-furtsev</a></p>
+</footer>
+
+</body>
+
+</html>

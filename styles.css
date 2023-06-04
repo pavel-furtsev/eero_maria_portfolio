@@ -6,34 +6,39 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Plus Jakarta Sans";
 }
 
-/* width */
+a.anchor {
+    display: block;
+    position: relative;
+    top: 120px;
+    visibility: none;
+}
+
+/* REGION: scroll bar */
 ::-webkit-scrollbar {
     width: 0.7vw;
     background: transparent;
 }
-  
-/* Track */
+
 ::-webkit-scrollbar-track {
     background: white
 }
    
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 5px;
 }
-  
-/* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 
 .wrapper {
     height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     perspective: 11px;
 }
 
@@ -129,9 +134,12 @@ header {
     }
 }
 
+/*REGION: Navigation bar*/
 
 nav {
     font-family: "Plus Jakarta Sans";
+    font-weight: 500;
+    font-size: small;
     position: sticky;
     top: 0;
     width: 100%;
@@ -151,12 +159,13 @@ nav {
     text-decoration: none;
     color: black;
     cursor: pointer;
-    margin-right: auto;
+    margin-right: 20px;
     user-select: none;
 }
 
 nav ul {
     user-select: none;
+    margin-left: auto;
 }
 
 nav li {
@@ -177,8 +186,6 @@ nav li a:hover{
 }
 
 .contact_btn {
-    font-family: "Plus Jakarta Sans";
-    font-weight: 500;
     padding: 9px 25px;
     margin-left: 15px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -190,12 +197,14 @@ nav li a:hover{
 }
 
 .contact_btn:hover {
-    background-color: rgb(228, 228, 228);
+    box-shadow: 0 0 5px gray;
+    outline: gray;
 }
 
 main {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 16px;
-    padding: 2rem;
     background-color: white;
 }
 
@@ -204,26 +213,49 @@ main p {
     padding: 50px 10%;
 }
 
-.gallery_title {
-    font-family: "Metal";
-    font-size: 40pt;
-    font-weight: 500;
-    color: rgb(194, 194, 194);
-    float: right;
-    transform: rotate(-90deg);
+.gallery {
+    display: grid;
+    padding-bottom: 100px;
 }
 
-.gallery {
-    display: flex;
-    justify-content: space-between;
+.gallery_title {
+    display: inline-block;
+    justify-self: center;
+    align-self: center;
+    height: 100%;
+    padding-bottom: 50px;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    font-family: "Metal";
+    font-size: 32pt;
+    font-weight: 100;
+    text-align: right;
+    color: rgb(194, 194, 194);
+    user-select: none;
+}
+
+.cards_container {
+    grid-row: 1;
+    grid-column: 2;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: start;
     flex-wrap: wrap;
+    vertical-align: top;
+    width: auto;
+    height: 100%;
+    padding-top: 35px;
 }
 
 .card {
-    width: 30vw;
-    display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+    width: 29vw;
+    max-width: 800px;
+    min-width: 300px;
+    height: auto;
+    
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .card:hover {
@@ -231,29 +263,171 @@ main p {
 }
 
 .card img {
+    display: block;
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
-div.card_title {
+h4.card_title {
+    display: block;
     padding: 15px;
-    text-align: center;
+    text-align: left;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 200;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .short_info {
+    display: block;
     padding: 15px;
+    padding-top: 0;
     text-align: center;
+    text-align: left;
 }
 
 footer {
-    font-family: "Plus Jakarta Sans";
     top: 0;
     width: 100%;
     z-index: 10;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 40px;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 40px;
     background-color: white;
     filter: drop-shadow(0px -2px 2px rgba(0, 0, 0, 0.25));
 }
+
+footer p {
+    font-family: "Metal";
+    padding: 0px 5px;
+    margin-top: 15px;
+    width: 100%; /*this makes sure that there is nothing else on the row*/
+    line-height: 40px;
+    align-self: flex-end;
+}
+
+footer .contact_links {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+/*Gen in touch text*/
+footer h2 {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 200;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    min-width: 180px;
+    padding: 5px;
+}
+
+footer .buttons {
+    margin: 5px;
+    min-width: 100px;
+    align-self: flex-end;
+}
+
+footer button {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+form {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+form .form_inputs {
+    width: 20vw;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+form input {
+    width: 100%;
+    height: 40px;
+    font-family: "Metal";
+    font-size: 16px;
+    display: block;
+    margin: 5px 0px;
+    padding: 5px;
+}
+
+input:focus {
+    border: none;
+    box-shadow: 0 0 5px gray;
+    outline: gray;
+}
+
+form textarea {
+    width: 40vw;
+    min-height: 130px;
+    font-family: "Metal";
+    padding: 5px;
+    margin: 5px;
+    resize: none;
+}
+
+form .submit {
+    width: 60vw;
+    height: 40px;
+    align-self: flex-end;
+    min-width: 100px;
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400;
+    margin: 5px;
+    background: white;
+    border-radius: 3px;
+    outline: 1px solid black;
+    border: none;
+}
+
+form .submit:hover {
+    box-shadow: 0 0 5px gray;
+    outline: gray;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    form .submit,
+    form textarea,
+    form .form_inputs {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer button {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    form textarea {
+        flex: 1;
+    }
+
+    footer h2 {
+        width: fit-content;   
+    }
+  }
+
+  @media (max-width: 660px) {
+    /*Gen in touch text*/
+    
+  }

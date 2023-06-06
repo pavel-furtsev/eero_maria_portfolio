@@ -206,6 +206,7 @@ main {
     flex-wrap: wrap;
     font-size: 16px;
     background-color: white;
+    padding-bottom: 100px;
 }
 
 main p {
@@ -451,7 +452,35 @@ form .submit:hover {
     }
 }
 
+@media (max-width: 820px) {
+    .logo {
+        font-size: 28px;
+        margin-right: 20px;
+    }
+    nav {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    .contact_btn {
+        padding: 8px 15px;
+    }
+    .gallery{
+        display: block;
+    }
+    .gallery_title {
+        font-size: 35px;
+        height: 80px;
+        transform: none;
+        writing-mode: initial;
+        display: block;
+        text-align: left;
+        padding: 10px 30px;
+    }
+    .cards_container{
+        padding-top: 0px;
+    }
     footer button {
         width: 30px;
         height: 30px;
@@ -468,9 +497,4 @@ form .submit:hover {
     footer h2 {
         width: fit-content;   
     }
-  }
-
-  @media (max-width: 660px) {
-    /*Gen in touch text*/
-    
   }

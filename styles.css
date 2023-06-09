@@ -163,12 +163,12 @@ nav {
     user-select: none;
 }
 
-nav ul {
+.menu {
     user-select: none;
     margin-left: auto;
 }
 
-nav li {
+.menu li {
     list-style: none;
     display: inline-block;
     padding: 0px 20px;
@@ -183,6 +183,22 @@ nav li a {
 
 nav li a:hover{
     color: gray;
+}
+
+nav .hamburger {
+    display: none; /* hide it for now*/
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+nav .burger_layer {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
 }
 
 .contact_btn {
@@ -463,6 +479,7 @@ form .submit:hover {
 }
 
 @media (max-width: 768px) {
+    
     .contact_btn {
         padding: 8px 15px;
     }
@@ -496,5 +513,56 @@ form .submit:hover {
 
     footer h2 {
         width: fit-content;   
+    }
+  }
+
+  @media (max-width: 713px){
+    .contact_btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menu {
+        position: fixed;
+        left: -100%;
+        padding: 0;
+        margin: 0;
+        top: 75px;
+        z-index: -1;
+        overflow: auto;
+        background-color: white;
+        gap: 0;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .menu.active {
+        display: fixed;
+        left: 0px;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+        margin: 0;
+        border-bottom: solid 1px rgb(222, 222, 222);
+        border-top: solid 1px rgb(222, 222, 222);
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+
+    nav .hamburger.active .burger_layer:nth-child(2){
+        opacity: 0;
+    }
+
+    nav .hamburger.active .burger_layer:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    nav .hamburger.active .burger_layer:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
     }
   }
